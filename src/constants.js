@@ -1,0 +1,4 @@
+const SINGLE_PLAYER = 0;
+const TWO_PLAYER = 1;
+
+export { SINGLE_PLAYER, TWO_PLAYER };
