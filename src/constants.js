@@ -12,6 +12,8 @@ const WINNING_SEQUENCES = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+const DRAW = 0;
+const WIN = 1;
 
 export {
   SINGLE_PLAYER,
@@ -19,4 +21,6 @@ export {
   NUMBER_OF_SQUARES,
   MAX_MOVE_COUNT,
   WINNING_SEQUENCES,
+  WIN,
+  DRAW,
 };

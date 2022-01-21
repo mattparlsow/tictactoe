@@ -8,7 +8,7 @@ function SplashScreen() {
 
   const setGameMode = useCallback(
     (gameMode) => {
-      navigate(`/play/${gameMode}`);
+      navigate(`/play`, { state: { gameMode: gameMode } });
     },
     [navigate]
   );
