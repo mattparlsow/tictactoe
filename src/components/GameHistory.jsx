@@ -21,6 +21,7 @@ function GameHistory(props) {
   };
 
   const toggleDrawer = (visibility) => (event) => {
+    //Don't close the side panel on keydown, tab, shift
     if (
       event &&
       event.type === "keydown" &&
@@ -39,7 +40,12 @@ function GameHistory(props) {
           <Button
             onClick={toggleDrawer(true)}
             variant="text"
-            sx={{ marginTop: "10px", background: "none", width: "100%" }}
+            sx={{
+              marginTop: "10px",
+              background: "none",
+              width: "100%",
+              color: "#1976d2",
+            }}
           >
             View Pervious Games
           </Button>

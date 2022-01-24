@@ -21,6 +21,7 @@ let theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          color: "#fff",
           width: "145px",
           backgroundColor: "rgb(251, 72, 71)",
           background: `linear-gradient(

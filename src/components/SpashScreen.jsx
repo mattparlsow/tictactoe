@@ -1,17 +1,14 @@
 import { Button, Stack, Typography } from "@mui/material";
-import React, { useCallback } from "react";
+import React from "react";
 import { SINGLE_PLAYER, TWO_PLAYER } from "../config";
 import { useNavigate } from "react-router-dom";
 
 function SplashScreen() {
   let navigate = useNavigate();
 
-  const setGameMode = useCallback(
-    (gameMode) => {
-      navigate(`/play`, { state: { gameMode: gameMode } });
-    },
-    [navigate]
-  );
+  const setGameMode = (gameMode) => {
+    navigate(`/setup`, { state: { gameMode: gameMode } });
+  };
 
   return (
     <Stack spacing={2} justifyContent="center" alignItems="center">
