@@ -12,7 +12,7 @@ const GameOutcomeContainer = styled("div")(({ theme }) => ({
   display: "flex",
   color: "#fff",
   justifyContent: "center",
-  h3: {
+  h2: {
     fontWeight: 600,
     wordBreak: "break-word",
     textAlign: "center",
