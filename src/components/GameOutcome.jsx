@@ -1,6 +1,23 @@
 import { Button, Stack, Typography } from "@mui/material";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+
+const GameOutcomeContainer = styled("div")(({ theme }) => ({
+  position: "absolute",
+  backgroundColor: "#0000009e",
+  width: "100%",
+  height: "100%",
+  top: 0,
+  display: "flex",
+  color: "#fff",
+  justifyContent: "center",
+  h3: {
+    fontWeight: 600,
+    wordBreak: "break-word",
+    textAlign: "center",
+  },
+}));
 
 function GameOutcomeDialog(props) {
   let navigate = useNavigate();
@@ -15,14 +32,15 @@ function GameOutcomeDialog(props) {
     return (winner ? winner : "") + (outcome ? " Wins!" : "Draw!");
   };
   return (
-    <div
-      className="overlay"
+    <GameOutcomeContainer
       style={{
         visibility: props.result || props.result ? "visible" : "hidden",
       }}
     >
       <Stack spacing={2} justifyContent="center" alignItems="center">
-        <Typography variant="h3">{buildDialogMessage()}</Typography>
+        <Typography component="h2" variant="h3">
+          {buildDialogMessage()}
+        </Typography>
         <Button variant="contained" disableElevation onClick={props.resetGame}>
           Play Again
         </Button>
@@ -30,7 +48,7 @@ function GameOutcomeDialog(props) {
           Menu
         </Button>
       </Stack>
-    </div>
+    </GameOutcomeContainer>
   );
 }
 

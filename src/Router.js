@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import App from "./App";
 import Game from "./components/Game";
 import SplashScreen from "./components/SpashScreen";
 

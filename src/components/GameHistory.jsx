@@ -3,13 +3,11 @@ import {
   AccordionDetails,
   AccordionSummary,
   Button,
-  Chip,
-  Stack,
   SwipeableDrawer,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { WIN } from "../constants";
+import { WIN } from "../config";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GameGrid from "./GameGrid";
 import { Box } from "@mui/system";
@@ -41,7 +39,7 @@ function GameHistory(props) {
           <Button
             onClick={toggleDrawer(true)}
             variant="text"
-            sx={{ marginTop: "10px" }}
+            sx={{ marginTop: "10px", background: "none", width: "100%" }}
           >
             View Pervious Games
           </Button>
@@ -64,7 +62,7 @@ function GameHistory(props) {
                     aria-controls={`panel${game.game}content`}
                     id={`panel${game.game}`}
                   >
-                    <Typography variant="subtitle">
+                    <Typography variant="subtitle2">
                       {`Game #${game.game} - ${
                         game.outcome === WIN ? `${game.winner} Won` : "Draw"
                       }`}
@@ -79,7 +77,9 @@ function GameHistory(props) {
                         <Typography variant="subtitle2">
                           Move #{index + 1}
                         </Typography>
-                        <GameGrid grid={grid} updateSquare={null} />
+                        <div>
+                          <GameGrid grid={grid} updateSquare={() => null} />
+                        </div>
                       </Box>
                     ))}
                   </AccordionDetails>

@@ -6,10 +6,10 @@ import {
   NUMBER_OF_SQUARES,
   WIN,
   WINNING_SEQUENCES,
-} from "../constants";
+} from "../config";
 import GameSetupDialog from "./GameSetupDialog";
 import { useLocation } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import GameHistory from "./GameHistory";
 
 function Game() {
@@ -35,7 +35,7 @@ function Game() {
             game: gameCount,
             winner: players[grid[a]],
             outcome: WIN,
-            gameMoves: gameMoves,
+            gameMoves: gameMoves.slice(1),
           },
         ]);
         break;
@@ -45,7 +45,12 @@ function Game() {
       setResult({ winner: null, outcome: DRAW });
       setGameHistory((prev) => [
         ...prev,
-        { game: gameCount, winner: null, outcome: DRAW, gameMoves: gameMoves },
+        {
+          game: gameCount,
+          winner: null,
+          outcome: DRAW,
+          gameMoves: gameMoves.slice(1),
+        },
       ]);
       return;
     }
@@ -85,20 +90,30 @@ function Game() {
         <GameSetupDialog setupPlayers={setupPlayers} gameMode={gameMode} />
       )}
       {players && (
-        <>
-          <div className="game-wrapper">
-            <Typography variant="h5">
-              {players.x + " VS " + players.o}
-            </Typography>
-            <GameGrid
-              grid={gameMoves[gameMoves.length - 1]}
-              updateSquare={updateSquare}
-              result={result}
-              resetGame={resetGame}
-            />
-            <GameHistory gameHistory={gameHistory} />
-          </div>
-        </>
+        <Box
+          sx={(theme) => ({
+            width: "35%",
+            textAlign: "center",
+            [theme.breakpoints.down("md")]: {
+              width: "50%",
+            },
+            [theme.breakpoints.down("sm")]: {
+              width: "90%",
+            },
+          })}
+        >
+          <Typography
+            component="h1"
+            variant="h5"
+          >{`${players.x} VS ${players.o}`}</Typography>
+          <GameGrid
+            grid={gameMoves[gameMoves.length - 1]}
+            updateSquare={updateSquare}
+            result={result}
+            resetGame={resetGame}
+          />
+          <GameHistory gameHistory={gameHistory} />
+        </Box>
       )}
     </>
   );

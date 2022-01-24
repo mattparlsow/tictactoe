@@ -1,11 +1,25 @@
-import { Button, Stack } from "@mui/material";
 import React from "react";
 import GameOutcomeDialog from "./GameOutcome";
 import GridSquare from "./GridSquare";
+import { styled } from "@mui/material/styles";
+
+const GameGridContainer = styled("div")(({ theme }) => ({
+  backgroundColor: theme.custom.backgroundColor,
+  background: theme.custom.backgroundGradient,
+  aspectRatio: "1 / 1",
+  padding: 10,
+  borderRadius: 5,
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-evenly",
+  alignContent: "space-around",
+  position: "relative",
+  overflow: "hidden",
+}));
 
 function GameGrid(props) {
   return (
-    <div className="game-grid">
+    <GameGridContainer>
       {props.result && (
         <GameOutcomeDialog result={props.result} resetGame={props.resetGame} />
       )}
@@ -17,7 +31,7 @@ function GameGrid(props) {
           updateSquare={props.updateSquare}
         />
       ))}
-    </div>
+    </GameGridContainer>
   );
 }
 
