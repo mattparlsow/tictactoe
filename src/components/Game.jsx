@@ -31,7 +31,7 @@ function Game() {
       const [a, b, c] = WINNING_SEQUENCES[i];
       if (grid[a] === grid[b] && grid[a] === grid[c] && grid[a] != null) {
         if (finishGame) {
-          //Get the winners name different object declaration depending on gameMode
+          //Get the winners name. Different object declaration depending on gameMode
           let winnerName =
             players[grid[a]] ||
             (players.player === grid[a] && "You") ||
@@ -161,12 +161,14 @@ function Game() {
               <Typography variant="subtitle2">You play first</Typography>
             </>
           )}
-          <GameGrid
-            grid={gameMoves[gameMoves.length - 1]}
-            updateSquare={updateSquare}
-            result={result}
-            resetGame={resetGame}
-          />
+          <Box width="100%" paddingTop="100%" position="relative">
+            <GameGrid
+              grid={gameMoves[gameMoves.length - 1]}
+              updateSquare={updateSquare}
+              result={result}
+              resetGame={resetGame}
+            />
+          </Box>
           <GameHistory gameHistory={gameHistory} />
         </Box>
       )}

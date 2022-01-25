@@ -3,6 +3,7 @@ import {
   AccordionDetails,
   AccordionSummary,
   Button,
+  Stack,
   SwipeableDrawer,
   Typography,
 } from "@mui/material";
@@ -61,7 +62,7 @@ function GameHistory(props) {
                   expanded={expanded === `panel${game.game}`}
                   onChange={handleAccordionChange(`panel${game.game}`)}
                   key={`game${game.game}`}
-                  sx={{ maxWidth: "300px" }}
+                  sx={{ width: "300px" }}
                 >
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -76,17 +77,17 @@ function GameHistory(props) {
                   </AccordionSummary>
                   <AccordionDetails>
                     {game.gameMoves.map((grid, index) => (
-                      <Box
+                      <Stack
                         marginBottom="20px"
                         key={`game${game.game}move${index}`}
                       >
                         <Typography variant="subtitle2">
                           Move #{index + 1}
                         </Typography>
-                        <div>
+                        <Box width="100%" paddingTop="100%" position="relative">
                           <GameGrid grid={grid} updateSquare={() => null} />
-                        </div>
-                      </Box>
+                        </Box>
+                      </Stack>
                     ))}
                   </AccordionDetails>
                 </Accordion>

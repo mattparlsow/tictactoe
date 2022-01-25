@@ -6,15 +6,19 @@ import { styled } from "@mui/material/styles";
 const GameGridContainer = styled("div")(({ theme }) => ({
   backgroundColor: theme.custom.backgroundColor,
   background: theme.custom.backgroundGradient,
-  aspectRatio: "1 / 1",
-  padding: 10,
   borderRadius: 5,
   display: "flex",
+  flexDirection: "row",
   flexWrap: "wrap",
-  justifyContent: "space-evenly",
+  justifyContent: "space-around",
   alignContent: "space-around",
-  position: "relative",
   overflow: "hidden",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "98%",
+  height: "98%",
+  padding: "1%",
 }));
 
 function GameGrid(props) {

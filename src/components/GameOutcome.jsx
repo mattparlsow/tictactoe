@@ -28,7 +28,6 @@ function GameOutcomeDialog(props) {
 
   const buildDialogMessage = () => {
     let winner = props.result.winner;
-    console.log(props.result);
     let outcome = props.result.outcome;
     return (winner ? winner : "") + (outcome ? " Won!" : "Draw!");
   };

@@ -3,13 +3,9 @@
 React Material UI 5 Tic Tac Toe game. Features a single player mode and 2 player mode.
 This application was created using webpack 5.
 
-### Live demo
-
-Live demo can be viewed here https://tictactoereact.azurewebsites.net
-
 ### `npm install`
 
-Before running the application locally you must install the dependencies first, via 'npm install'. This command must be run from within the project folder.
+Before running the application locally you must install the dependencies first, via 'npm install'. This command must be run from within the project folder. All the dependencies are listed in the package.json file.
 
 ### `npm start`
 
