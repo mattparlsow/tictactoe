@@ -150,7 +150,7 @@ function Game() {
                 component="h1"
                 variant="h5"
               >{`${players.x} VS ${players.o}`}</Typography>
-              <Typography variant="subtitle2">X Plays first</Typography>
+              <Typography variant="subtitle2">X plays first</Typography>
             </>
           )}
           {gameMode === SINGLE_PLAYER && (
@@ -158,7 +158,7 @@ function Game() {
               <Typography component="h1" variant="h5">
                 You VS A.I
               </Typography>
-              <Typography variant="subtitle2">You Play first</Typography>
+              <Typography variant="subtitle2">You play first</Typography>
             </>
           )}
           <GameGrid
