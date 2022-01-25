@@ -1,7 +1,7 @@
 # Tic Tac Toe game
 
 React Material UI 5 Tic Tac Toe game. Features a single player mode and 2 player mode.
-This application was created using webpack 5.
+This application was created using webpack.
 
 ### Node
 
